@@ -7,12 +7,10 @@ spring:
       client:
         registration:
           kakao:
-            clientId:
-            scope: profile_nickname
+            scope:
             client-name: Kakao
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8010/login/oauth2/code/kakao
-            client-authentication-method: POST
+            redirect-uri: 'http://localhost:8010/{action}/oauth2/code/{registrationId}'
         provider:
           kakao:
             authorization-uri: https://kauth.kakao.com/oauth/authorize
