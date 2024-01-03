@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -29,9 +30,8 @@ public class ArticleController {
     }
 
     @PostMapping("/create")
-    public String create(@RequestParam("title") String title, @RequestParam("content") String content) {
-        this.articleService.create(title, content);
-
+    public String create(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("thumbnail")  MultipartFile thumbnail) {
+        this.articleService.create(title, content, thumbnail);
 
         return "redirect:/article/list";
     }

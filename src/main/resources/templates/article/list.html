@@ -3,6 +3,9 @@
     <ul th:each="article : ${articleList}">
         <li th:text="${article.title}"></li>
         <li th:text="${article.content}"></li>
+        <li>
+            <img th:src="@{|/file/${article.thumbnailImg}|}" alt="12313s">
+        </li>
     </ul>
 
 
