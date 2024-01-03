@@ -1,0 +1,11 @@
+<div>
+    게시판목록
+    <ul th:each="article : ${articleList}">
+        <li th:text="${article.title}"></li>
+        <li th:text="${article.content}"></li>
+    </ul>
+
+
+</div>
+
+<a href="/article/create">게시글 등록</a>
